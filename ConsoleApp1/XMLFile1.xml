@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<EML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:xnl="urn:oasis:names:tc:ciq:xnl:4"
+     xmlns:xal="urn:oasis:names:tc:ciq:xal:4"
+     xmlns="urn:oasis:names:tc:evs:schema:eml"
+     xmlns:martine="http://www.martine.be/extensions"
+     Id="510"
+     SchemaVersion="7.0"
+     xsi:schemaLocation="urn:oasis:names:tc:evs:schema:eml schema/510-count-v7-0.xsd
+            http://www.martine.be/extensions schema/martine-eml-extensions.xsd">
+
+
+  <EMLHeader>
+    <TransactionId>01</TransactionId>
+    <ManagingAuthority>
+      <AuthorityIdentifier>2</AuthorityIdentifier>
+      <AuthorityName>
+        <NameElement ElementType="">VLR</NameElement>
+      </AuthorityName>
+      <Description>Some Description</Description>
+      <OrganizationURL>Unknown</OrganizationURL>
+      <AuthorityAddress/>
+    </ManagingAuthority>
+  </EMLHeader>
+</EML>
