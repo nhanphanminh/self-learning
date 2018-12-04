@@ -167,6 +167,16 @@
     <Compile Include="GangsOfFour\Creatations\AbstractFactory\Plane.cs" />
     <Compile Include="GangsOfFour\Creatations\AbstractFactory\Tank.cs" />
     <Compile Include="GangsOfFour\Creatations\AbstractFactory\TransFactory.cs" />
+    <Compile Include="GangsOfFour\Creatations\Builder\BuildAllParts\CarBuilder.cs" />
+    <Compile Include="GangsOfFour\Creatations\Builder\BuildAllParts\IVehicleBuilder.cs" />
+    <Compile Include="GangsOfFour\Creatations\Builder\BuildAllParts\IVehicleFactory.cs" />
+    <Compile Include="GangsOfFour\Creatations\Builder\BuildAllParts\TruckBuilder.cs" />
+    <Compile Include="GangsOfFour\Creatations\Builder\BuildAllParts\VehicleFactory.cs" />
+    <Compile Include="GangsOfFour\Creatations\Builder\BuildSomePart\DocumentFactory.cs" />
+    <Compile Include="GangsOfFour\Creatations\Builder\BuildSomePart\ExcelBuilder.cs" />
+    <Compile Include="GangsOfFour\Creatations\Builder\BuildSomePart\IDocBuilder.cs" />
+    <Compile Include="GangsOfFour\Creatations\Builder\BuildSomePart\IDocumentFactory.cs" />
+    <Compile Include="GangsOfFour\Creatations\Builder\BuildSomePart\WordBuilder.cs" />
     <Compile Include="GangsOfFour\Creatations\Factory\CarToy.cs" />
     <Compile Include="GangsOfFour\Creatations\Factory\DuckToy.cs" />
     <Compile Include="GangsOfFour\Creatations\Factory\IToyFactory.cs" />
@@ -229,8 +239,8 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GangsOfFour\Creatations\Builder\BuildAllParts\" />
-    <Folder Include="GangsOfFour\Creatations\Builder\BuildSomePart\" />
+    <Folder Include="GangsOfFour\Creatations\Prototype\" />
+    <Folder Include="GangsOfFour\Creatations\Singleton\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

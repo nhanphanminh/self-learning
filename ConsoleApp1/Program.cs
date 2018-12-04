@@ -1,6 +1,8 @@
 ﻿using ConsoleApp1.Extensions;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -380,39 +382,64 @@ namespace ConsoleApp1
         #endregion
         public const string LoginAdNotFound =
             "Login AD {0} with user {1} success but the user infomation not found on the current directory";
+
+        #region Concurrence Perfomances
+
+        private static void Dictionaries()
+        {
+            const int N = 10000000;
+            var dict = new Dictionary<int, int>();
+            var watch = Stopwatch.StartNew();
+            for (int i = 0; i < N; i++)
+            {
+                dict.Add(i, 0);
+            }
+            watch.Stop();
+            var elapsedMs = watch.ElapsedMilliseconds;
+
+            Console.WriteLine($"Dictionary adding time:{elapsedMs}");
+
+            var cDict = new ConcurrentDictionary<int, int>();
+            watch = Stopwatch.StartNew();
+            for (int i = 0; i < N; i++)
+            {
+                cDict.TryAdd(i, 0);
+            }
+            watch.Stop();
+            elapsedMs = watch.ElapsedMilliseconds;
+
+            Console.WriteLine($"Concurrent dictionary adding time:{elapsedMs}");
+
+            watch = Stopwatch.StartNew();
+            for (int i = 0; i < N; i++)
+            {
+                var i1 = dict[i];
+            }
+            watch.Stop();
+            elapsedMs = watch.ElapsedMilliseconds;
+
+            Console.WriteLine($"dictionary get time:{elapsedMs}");
+
+            watch = Stopwatch.StartNew();
+            for (int i = 0; i < N; i++)
+            {
+                var i1 = cDict[i];
+            }
+            watch.Stop();
+            elapsedMs = watch.ElapsedMilliseconds;
+
+            Console.WriteLine($"Concurrent dictionary get time:{elapsedMs}");
+        }
+
+
+        #endregion Concurrence Perfomances
         public static void Main(string[] args)
         {
+            Dictionaries();
             var s = "XXX";
             var F = string.Format(LoginAdNotFound, s, s);
 
             StringExtensionTest();
-            //var text = new SortedDictionary<char, int>();
-            //var inputText = Console.ReadLine();
-
-            //foreach (var character in inputText)
-            //{
-            //    if (character == ' ')
-            //    {
-            //        continue;
-            //    }
-
-            //    if (text.ContainsKey(character))
-            //    {
-            //        text[character]++;
-            //    }
-            //    else
-            //    {
-            //        text.Add(character, 1);
-            //    }
-            //}
-
-
-            //foreach (var character in text.OrderByDescending(x => x.Value))
-            //{
-            //    Console.WriteLine($"{character.Key} -> {character.Value}");
-            //}
-
-
             #region list
             ////A: [9-> 9-> 1]
             ////B: [1]
