@@ -59,7 +59,7 @@ namespace ConsoleApp1
         //    return (tmp * 2) % MOD;
         //}
 
-        //better solution:
+        //better solution: change something
         public int cntBits(List<int> A)
         {
             
