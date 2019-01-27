@@ -243,8 +243,10 @@ namespace ConsoleApp1
         public static string RemoveStartAndEndBreaks(string input)
         {
             var lineBreaks = new[] { "<br>", "<br/>", "<br />", "<p></p>", "<p> </p>", "<p>&nbsp;</p>", "<div></div>", "<div> </div>", "<div>&nbsp;</div>" };
-
+            
             var isMatched = true;
+
+
 
             while (isMatched)
             {
@@ -267,7 +269,7 @@ namespace ConsoleApp1
                     isMatched = false;
                 }
             }
-
+            //edit something.
             return input;
         }
 
